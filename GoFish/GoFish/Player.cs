@@ -49,5 +49,55 @@ namespace GoFish
             Card randomCard = cards.Peek(random.Next(cards.Count));
             return randomCard.Value;
         }
+
+        public Deck DoYouHaveAny(Values value)
+        {
+            Deck cardsIHave = cards.PullOutValues(value);
+            textBoxOnForm.Text += Name + " has " + cardsIHave.Count + " " + Card.Plural(value) + Environment.NewLine;
+            return cardsIHave;
+        }
+
+        public void AskForACard(List<Player> players, int myIndex, Deck stock)
+        {
+            if(stock.Count > 0)
+            {
+                if(cards.Count == 0)
+                {
+                    cards.Add(stock.Deal());
+                }
+                Values randomValue = GetRandomValue();
+                AskForACard(players, myIndex, stock, randomValue);
+            }
+
+            // Here's an overloaded version of AskForACard()—choose a random value
+            // from the deck using GetRandomValue() and ask for it using AskForACard()
+        }
+        public void AskForACard(List<Player> players, int myIndex, Deck stock, Values value)
+        {
+            textBoxOnForm.Text += Name + " asks if anyone has a " + value + Environment.NewLine;
+
+            int totalCards = 0;
+            for (int i = 0; i <= players.Count; i++)
+            {
+                if(myIndex != i)
+                {
+                    Player player = players[i];
+
+                    Deck givenCards = player.DoYouHaveAny(value);
+                    totalCards += givenCards.Count;
+
+                    while(givenCards.Count > 0)
+                    {
+                        cards.Add(givenCards.Deal());
+                    }
+                }
+            }
+
+            if(totalCards == 0 && stock.Count > 0)
+            {
+                textBoxOnForm.Text += Name + " had to draw from the stock";
+                cards.Add(stock.Deal());
+            }
+        }
     }
 }
