@@ -98,7 +98,7 @@ namespace GoFish
             }
             return deckToReturn;
         }
-        public void Sort()
+        public void SortByValue()
         {
             cards.Sort(new CardComparer_byValue());
         }

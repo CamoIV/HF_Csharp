@@ -68,9 +68,6 @@ namespace GoFish
                 Values randomValue = GetRandomValue();
                 AskForACard(players, myIndex, stock, randomValue);
             }
-
-            // Here's an overloaded version of AskForACard()—choose a random value
-            // from the deck using GetRandomValue() and ask for it using AskForACard()
         }
         public void AskForACard(List<Player> players, int myIndex, Deck stock, Values value)
         {
@@ -99,5 +96,10 @@ namespace GoFish
                 cards.Add(stock.Deal());
             }
         }
+        public int CardCount { get { return cards.Count; } }
+        public void TakeCard(Card card) { cards.Add(card); }
+        public IEnumerable<string> GetCardNames() { return cards.GetCardNames(); }
+        public Card Peek(int cardNumber) { return cards.Peek(cardNumber); }
+        public void SortHand() { cards.SortByValue(); }
     }
 }
