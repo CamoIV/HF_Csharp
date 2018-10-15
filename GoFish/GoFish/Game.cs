@@ -30,13 +30,13 @@ namespace GoFish
         {
             stock.Shuffle();
 
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
-                foreach(Player player in players)
+                foreach (Player player in players)
                 {
                     player.TakeCard(stock.Deal());
                 }
-                foreach(Player player in players)
+                foreach (Player player in players)
                 {
                     PullOutBooks(player);
                 }
@@ -44,16 +44,37 @@ namespace GoFish
         }
         public bool PlayOneRound(int selectedPlayerCard)
         {
-            // Play one round of the game. The parameter is the card the player selected
-            // from his hand—get its value. Then go through all of the players and call
-            // each one's AskForACard() methods, starting with the human player (who's
-            // at index zero in the Players list—make sure he asks for the selected
-            // card's value). Then call PullOutBooks()—if it returns true, then the
-            // player ran out of cards and needs to draw a new hand. After all the players
-            // have gone, sort the human player's hand (so it looks nice in the form).
-            // Then check the stock to see if it's out of cards. If it is, reset the
-            // TextBox on the form to say, "The stock is out of cards. Game over!" and return
-            // true. Otherwise, the game isn't over yet, so return false.
+            Values cardToAskFor = players[0].Peek(selectedPlayerCard).Value;
+
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (i == 0)
+                {
+                    players[0].AskForACard(players, 0, stock, cardToAskFor);
+                }
+                else
+                {
+                    players[i].AskForACard(players, i, stock);
+                    textBoxOnForm.Text += players[i].Name + " drew a new hand" + Environment.NewLine;
+                }
+
+                if (PullOutBooks(players[i]))
+                {
+                    int card = 1;
+                    while (card < 5 && stock.Count > 0)
+                    {
+                        players[i].TakeCard(stock.Deal());
+                        card++;
+                    }
+                }
+            }
+            players[0].SortHand();
+            if(stock.Count == 0)
+            {
+                textBoxOnForm.Text = "The stock is out of cards. Game Over!" + Environment.NewLine;
+                return true;
+            }
+            return false;
         }
         public bool PullOutBooks(Player player)
         {
