@@ -74,7 +74,7 @@ namespace GoFish
             textBoxOnForm.Text += Name + " asks if anyone has a " + value + Environment.NewLine;
 
             int totalCards = 0;
-            for (int i = 0; i <= players.Count; i++)
+            for (int i = 0; i < players.Count; i++)
             {
                 if(myIndex != i)
                 {
@@ -92,7 +92,7 @@ namespace GoFish
 
             if(totalCards == 0 && stock.Count > 0)
             {
-                textBoxOnForm.Text += Name + " had to draw from the stock";
+                textBoxOnForm.Text += Name + " had to draw from the stock" + Environment.NewLine;
                 cards.Add(stock.Deal());
             }
         }

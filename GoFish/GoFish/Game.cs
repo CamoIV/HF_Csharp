@@ -69,7 +69,7 @@ namespace GoFish
                 }
             }
             players[0].SortHand();
-            if(stock.Count == 0)
+            if (stock.Count == 0)
             {
                 textBoxOnForm.Text = "The stock is out of cards. Game Over!" + Environment.NewLine;
                 return true;
@@ -78,29 +78,83 @@ namespace GoFish
         }
         public bool PullOutBooks(Player player)
         {
-            // Pull out a player's books. Return true if the player ran out of cards, otherwise
-            // return false. Each book is added to the Books dictionary. A player runs out of
-            // cards when he’'s used all of his cards to make books—and he wins the game.
+            IEnumerable<Values> booksPulled = player.PullOutBooks();
+
+            foreach (Values value in booksPulled)
+            {
+                books.Add(value, player);
+            }
+            if (player.CardCount == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public string DescribeBooks()
         {
-            // Return a long string that describes everyone's books by looking at the Books
-            // dictionary: "Joe has a book of sixes. (line break) Ed has a book of Aces."
+            string whoHasWhat = "";
+            foreach (Values value in books.Keys)
+            {
+                whoHasWhat += books[value].Name + " has a book of " + Card.Plural(value) + Environment.NewLine;
+            }
+            return whoHasWhat;
         }
 
         public string GetWinnerName()
         {
-            // This method is called at the end of the game. It uses its own dictionary
-            // (Dictionary<string, int> winners) to keep track of how many books each player
-            // ended up with in the books dictionary. First it uses a foreach loop
-            // on books.Keys—foreach (Values value in books.Keys)—to populate
-            // its winners dictionary with the number of books each player ended up with.
-            // Then it loops through that dictionary to find the largest number of books
-            // any winner has. And finally it makes one last pass through winners to come
-            // up with a list of winners in a string ("Joe and Ed"). If there's one winner,
-            // it returns a string like this: "Ed with 3 books". Otherwise, it returns a
-            // string like this: "A tie between Joe and Bob with 2 books."
+            Dictionary<string, int> winner = new Dictionary<string, int>();
+
+            foreach (Values value in books.Keys)
+            {
+                string name = books[value].Name;
+
+                if (winner.ContainsKey(name))
+                {
+                    winner[name]++;
+                }
+                else
+                {
+                    winner.Add(name, 1);
+                }
+            }
+
+            int mostBooks = 0;
+
+            foreach (string name in winner.Keys)
+            {
+                if (winner[name] > mostBooks)
+                {
+                    mostBooks = winner[name];
+                }
+            }
+            bool tie = false;
+            string winnersList = "";
+
+            foreach (string name in winner.Keys)
+            {
+                if (winner[name] == mostBooks)
+                {
+                    if (!String.IsNullOrEmpty(winnersList))
+                    {
+                        winnersList += " and ";
+                        tie = true;
+                    }
+                    winnersList += name;
+                }
+                winnersList += " with " + mostBooks + " books";
+            }
+            if (tie)
+            {
+                return "A tie between " + winnersList;
+            }
+            else
+            {
+                return winnersList;
+            }
         }
 
         public IEnumerable<string> GetPlayerCardNames()
