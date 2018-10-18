@@ -55,7 +55,7 @@ namespace GoFish
                 else
                 {
                     players[i].AskForACard(players, i, stock);
-                    textBoxOnForm.Text += players[i].Name + " drew a new hand" + Environment.NewLine;
+                    textBoxOnForm.Text += players[i].Name + " drew a new card" + Environment.NewLine;
                 }
 
                 if (PullOutBooks(players[i]))

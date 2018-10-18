@@ -22,7 +22,7 @@ namespace GoFish
             this.textBoxOnForm = textBoxOnForm;
             this.cards = new Deck(new Card[] { });
 
-            textBoxOnForm.Text = Name + " has just joined the game " + Environment.NewLine;
+            textBoxOnForm.Text += Name + " has just joined the game " + Environment.NewLine;
         }
 
         public IEnumerable<Values> PullOutBooks()
