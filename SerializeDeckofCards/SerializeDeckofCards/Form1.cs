@@ -93,5 +93,31 @@ namespace SerializeDeckofCards
                 }
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Deck mydeck = new Deck(new Card[] { });
+            mydeck.Add(new Card((Suits)1, (Values)3));
+
+            using (Stream output = File.Create("threeOfClubs.dat"))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(output, mydeck);
+                dealCards(mydeck, "Three of clubs has been written");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Deck mydeck = new Deck(new Card[] { });
+            mydeck.Add(new Card((Suits)3, (Values)6));
+
+            using (Stream output = File.Create("sixOfHearts.dat"))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(output, mydeck);
+                dealCards(mydeck, "Six of hearts has been written");
+            }
+        }
     }
 }
