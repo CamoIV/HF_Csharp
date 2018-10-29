@@ -8,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DinnerParty1._2
+namespace PartyPlanner
 {
     public partial class Form1 : Form
     {
-        DinnerPartyCS dinnerParty;
+        DinnerParty dinnerParty;
         public Form1()
         {
             InitializeComponent();
-            dinnerParty = new DinnerPartyCS() { NumberOfPeople = 5 };
-            dinnerParty.SetHealthyOption(false);
-            dinnerParty.CalculateCostOfDecorations(true);
+            dinnerParty = new DinnerParty((int)numericUpDown1.Value, fancyBox.Checked, healthyBox.Checked);
             DisplayDinnerPartyCost();
         }
 
         private void DisplayDinnerPartyCost()
         {
-            costLabel.Text = dinnerParty.CalculateCost(healthyBox.Checked).ToString("c");
+            decimal cost = dinnerParty.Cost;
+            costLabel.Text = cost.ToString("c");
+
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -35,13 +35,13 @@ namespace DinnerParty1._2
 
         private void fancyBox_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.CalculateCostOfDecorations(fancyBox.Checked);
+            dinnerParty.FancyDecorations = fancyBox.Checked;
             DisplayDinnerPartyCost();
         }
 
         private void healthyBox_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.SetHealthyOption(healthyBox.Checked);
+            dinnerParty.HealthyOption = healthyBox.Checked;
             DisplayDinnerPartyCost();
         }
     }

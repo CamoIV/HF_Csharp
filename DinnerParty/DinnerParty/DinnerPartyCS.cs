@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DinnerParty1._2
 {
-    class DinnerParty
+    class DinnerPartyCS
     {
         public int NumberOfPeople { get; set; }
         public bool HealthyOption { get; set; }
         public bool FancyDecorations { get; set; }
 
 
-        public DinnerParty(int numberOfPeople, bool healthyOption, bool fancyDecorations)
+        public DinnerPartyCS(int numberOfPeople, bool healthyOption, bool fancyDecorations)
         {
             this.NumberOfPeople = numberOfPeople;
             this.HealthyOption = healthyOption;
@@ -56,11 +56,11 @@ namespace DinnerParty1._2
             get
             {
                 decimal totalCost;
-                totalCost += calculateCostOfDecorations() + ((calculateCostOfBeveragePerPerson() + 25m) * NumberOfPeople);
+                totalCost = calculateCostOfDecorations() + ((calculateCostOfBeveragePerPerson() + 25m) * NumberOfPeople);
 
                 if (HealthyOption)
                 {
-                    return totalCost * .95;
+                    return totalCost * .95m;
                 }
                 else
                 {

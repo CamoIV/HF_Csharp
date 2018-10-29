@@ -1,4 +1,4 @@
-﻿namespace DinnerParty
+﻿namespace DinnerParty1._2
 {
     partial class Form1
     {
