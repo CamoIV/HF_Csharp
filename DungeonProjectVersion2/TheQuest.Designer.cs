@@ -45,15 +45,24 @@ namespace DungeonProjectVersion2
             this.pbBluePotionInv = new System.Windows.Forms.PictureBox();
             this.pbRedPotionInv = new System.Windows.Forms.PictureBox();
             this.gbMove = new System.Windows.Forms.GroupBox();
-            this.gbAttack = new System.Windows.Forms.GroupBox();
-            this.btnMoveRight = new System.Windows.Forms.Button();
-            this.btnMoveUp = new System.Windows.Forms.Button();
-            this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnMoveLeft = new System.Windows.Forms.Button();
-            this.btnAtkRight = new System.Windows.Forms.Button();
-            this.btnAtkUp = new System.Windows.Forms.Button();
-            this.btnAtkDown = new System.Windows.Forms.Button();
+            this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnMoveUp = new System.Windows.Forms.Button();
+            this.btnMoveRight = new System.Windows.Forms.Button();
+            this.gbAttack = new System.Windows.Forms.GroupBox();
             this.btnAtkLeft = new System.Windows.Forms.Button();
+            this.btnAtkDown = new System.Windows.Forms.Button();
+            this.btnAtkUp = new System.Windows.Forms.Button();
+            this.btnAtkRight = new System.Windows.Forms.Button();
+            this.tlpScoreBoard = new System.Windows.Forms.TableLayoutPanel();
+            this.lblGhoulHitPoints = new System.Windows.Forms.Label();
+            this.lblGhostHitPoints = new System.Windows.Forms.Label();
+            this.lblBatHitPoints = new System.Windows.Forms.Label();
+            this.lblPlayerHitPoints = new System.Windows.Forms.Label();
+            this.lblPlayer = new System.Windows.Forms.Label();
+            this.lblBat = new System.Windows.Forms.Label();
+            this.lblGhost = new System.Windows.Forms.Label();
+            this.lblGhoul = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGhost)).BeginInit();
@@ -70,6 +79,7 @@ namespace DungeonProjectVersion2
             ((System.ComponentModel.ISupportInitialize)(this.pbRedPotionInv)).BeginInit();
             this.gbMove.SuspendLayout();
             this.gbAttack.SuspendLayout();
+            this.tlpScoreBoard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbPlayer
@@ -93,6 +103,7 @@ namespace DungeonProjectVersion2
             this.pbBat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbBat.TabIndex = 1;
             this.pbBat.TabStop = false;
+            this.pbBat.Visible = false;
             // 
             // pbGhost
             // 
@@ -104,6 +115,7 @@ namespace DungeonProjectVersion2
             this.pbGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbGhost.TabIndex = 2;
             this.pbGhost.TabStop = false;
+            this.pbGhost.Visible = false;
             // 
             // pbGhoul
             // 
@@ -115,6 +127,7 @@ namespace DungeonProjectVersion2
             this.pbGhoul.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbGhoul.TabIndex = 3;
             this.pbGhoul.TabStop = false;
+            this.pbGhoul.Visible = false;
             // 
             // pbRedPotion1
             // 
@@ -126,6 +139,7 @@ namespace DungeonProjectVersion2
             this.pbRedPotion1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbRedPotion1.TabIndex = 4;
             this.pbRedPotion1.TabStop = false;
+            this.pbRedPotion1.Visible = false;
             // 
             // pbRedPotion2
             // 
@@ -137,6 +151,7 @@ namespace DungeonProjectVersion2
             this.pbRedPotion2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbRedPotion2.TabIndex = 5;
             this.pbRedPotion2.TabStop = false;
+            this.pbRedPotion2.Visible = false;
             // 
             // pbSword
             // 
@@ -148,6 +163,7 @@ namespace DungeonProjectVersion2
             this.pbSword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbSword.TabIndex = 6;
             this.pbSword.TabStop = false;
+            this.pbSword.Visible = false;
             // 
             // pbBow
             // 
@@ -159,6 +175,7 @@ namespace DungeonProjectVersion2
             this.pbBow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbBow.TabIndex = 7;
             this.pbBow.TabStop = false;
+            this.pbBow.Visible = false;
             // 
             // pbMace
             // 
@@ -170,6 +187,7 @@ namespace DungeonProjectVersion2
             this.pbMace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbMace.TabIndex = 8;
             this.pbMace.TabStop = false;
+            this.pbMace.Visible = false;
             // 
             // pbSwordInv
             // 
@@ -240,6 +258,42 @@ namespace DungeonProjectVersion2
             this.gbMove.TabStop = false;
             this.gbMove.Text = "Move";
             // 
+            // btnMoveLeft
+            // 
+            this.btnMoveLeft.Location = new System.Drawing.Point(38, 21);
+            this.btnMoveLeft.Name = "btnMoveLeft";
+            this.btnMoveLeft.Size = new System.Drawing.Size(25, 25);
+            this.btnMoveLeft.TabIndex = 19;
+            this.btnMoveLeft.Text = "←";
+            this.btnMoveLeft.UseVisualStyleBackColor = true;
+            // 
+            // btnMoveDown
+            // 
+            this.btnMoveDown.Location = new System.Drawing.Point(69, 41);
+            this.btnMoveDown.Name = "btnMoveDown";
+            this.btnMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnMoveDown.TabIndex = 18;
+            this.btnMoveDown.Text = "↓";
+            this.btnMoveDown.UseVisualStyleBackColor = true;
+            // 
+            // btnMoveUp
+            // 
+            this.btnMoveUp.Location = new System.Drawing.Point(69, 3);
+            this.btnMoveUp.Name = "btnMoveUp";
+            this.btnMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnMoveUp.TabIndex = 17;
+            this.btnMoveUp.Text = "↑";
+            this.btnMoveUp.UseVisualStyleBackColor = true;
+            // 
+            // btnMoveRight
+            // 
+            this.btnMoveRight.Location = new System.Drawing.Point(100, 21);
+            this.btnMoveRight.Name = "btnMoveRight";
+            this.btnMoveRight.Size = new System.Drawing.Size(25, 25);
+            this.btnMoveRight.TabIndex = 16;
+            this.btnMoveRight.Text = "→";
+            this.btnMoveRight.UseVisualStyleBackColor = true;
+            // 
             // gbAttack
             // 
             this.gbAttack.BackColor = System.Drawing.Color.Transparent;
@@ -254,60 +308,14 @@ namespace DungeonProjectVersion2
             this.gbAttack.TabStop = false;
             this.gbAttack.Text = "Attack";
             // 
-            // btnMoveRight
+            // btnAtkLeft
             // 
-            this.btnMoveRight.Location = new System.Drawing.Point(100, 21);
-            this.btnMoveRight.Name = "btnMoveRight";
-            this.btnMoveRight.Size = new System.Drawing.Size(25, 25);
-            this.btnMoveRight.TabIndex = 16;
-            this.btnMoveRight.Text = "→";
-            this.btnMoveRight.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveUp
-            // 
-            this.btnMoveUp.Location = new System.Drawing.Point(69, 3);
-            this.btnMoveUp.Name = "btnMoveUp";
-            this.btnMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnMoveUp.TabIndex = 17;
-            this.btnMoveUp.Text = "↑";
-            this.btnMoveUp.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveDown
-            // 
-            this.btnMoveDown.Location = new System.Drawing.Point(69, 41);
-            this.btnMoveDown.Name = "btnMoveDown";
-            this.btnMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnMoveDown.TabIndex = 18;
-            this.btnMoveDown.Text = "↓";
-            this.btnMoveDown.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveLeft
-            // 
-            this.btnMoveLeft.Location = new System.Drawing.Point(38, 21);
-            this.btnMoveLeft.Name = "btnMoveLeft";
-            this.btnMoveLeft.Size = new System.Drawing.Size(25, 25);
-            this.btnMoveLeft.TabIndex = 19;
-            this.btnMoveLeft.Text = "←";
-            this.btnMoveLeft.UseVisualStyleBackColor = true;
-            // 
-            // btnAtkRight
-            // 
-            this.btnAtkRight.Location = new System.Drawing.Point(108, 18);
-            this.btnAtkRight.Name = "btnAtkRight";
-            this.btnAtkRight.Size = new System.Drawing.Size(25, 25);
-            this.btnAtkRight.TabIndex = 20;
-            this.btnAtkRight.Text = "→";
-            this.btnAtkRight.UseVisualStyleBackColor = true;
-            // 
-            // btnAtkUp
-            // 
-            this.btnAtkUp.Location = new System.Drawing.Point(77, 0);
-            this.btnAtkUp.Name = "btnAtkUp";
-            this.btnAtkUp.Size = new System.Drawing.Size(25, 25);
-            this.btnAtkUp.TabIndex = 21;
-            this.btnAtkUp.Text = "↑";
-            this.btnAtkUp.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnAtkUp.UseVisualStyleBackColor = true;
+            this.btnAtkLeft.Location = new System.Drawing.Point(46, 18);
+            this.btnAtkLeft.Name = "btnAtkLeft";
+            this.btnAtkLeft.Size = new System.Drawing.Size(25, 25);
+            this.btnAtkLeft.TabIndex = 23;
+            this.btnAtkLeft.Text = "←";
+            this.btnAtkLeft.UseVisualStyleBackColor = true;
             // 
             // btnAtkDown
             // 
@@ -319,14 +327,121 @@ namespace DungeonProjectVersion2
             this.btnAtkDown.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnAtkDown.UseVisualStyleBackColor = true;
             // 
-            // btnAtkLeft
+            // btnAtkUp
             // 
-            this.btnAtkLeft.Location = new System.Drawing.Point(46, 18);
-            this.btnAtkLeft.Name = "btnAtkLeft";
-            this.btnAtkLeft.Size = new System.Drawing.Size(25, 25);
-            this.btnAtkLeft.TabIndex = 23;
-            this.btnAtkLeft.Text = "←";
-            this.btnAtkLeft.UseVisualStyleBackColor = true;
+            this.btnAtkUp.Location = new System.Drawing.Point(77, 0);
+            this.btnAtkUp.Name = "btnAtkUp";
+            this.btnAtkUp.Size = new System.Drawing.Size(25, 25);
+            this.btnAtkUp.TabIndex = 21;
+            this.btnAtkUp.Text = "↑";
+            this.btnAtkUp.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnAtkUp.UseVisualStyleBackColor = true;
+            // 
+            // btnAtkRight
+            // 
+            this.btnAtkRight.Location = new System.Drawing.Point(108, 18);
+            this.btnAtkRight.Name = "btnAtkRight";
+            this.btnAtkRight.Size = new System.Drawing.Size(25, 25);
+            this.btnAtkRight.TabIndex = 20;
+            this.btnAtkRight.Text = "→";
+            this.btnAtkRight.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAtkRight.UseVisualStyleBackColor = true;
+            // 
+            // tlpScoreBoard
+            // 
+            this.tlpScoreBoard.BackColor = System.Drawing.Color.Transparent;
+            this.tlpScoreBoard.ColumnCount = 2;
+            this.tlpScoreBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpScoreBoard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpScoreBoard.Controls.Add(this.lblGhoulHitPoints, 1, 3);
+            this.tlpScoreBoard.Controls.Add(this.lblGhostHitPoints, 1, 2);
+            this.tlpScoreBoard.Controls.Add(this.lblBatHitPoints, 1, 1);
+            this.tlpScoreBoard.Controls.Add(this.lblPlayerHitPoints, 1, 0);
+            this.tlpScoreBoard.Controls.Add(this.lblPlayer, 0, 0);
+            this.tlpScoreBoard.Controls.Add(this.lblBat, 0, 1);
+            this.tlpScoreBoard.Controls.Add(this.lblGhost, 0, 2);
+            this.tlpScoreBoard.Controls.Add(this.lblGhoul, 0, 3);
+            this.tlpScoreBoard.Location = new System.Drawing.Point(582, 272);
+            this.tlpScoreBoard.Name = "tlpScoreBoard";
+            this.tlpScoreBoard.RowCount = 4;
+            this.tlpScoreBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpScoreBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpScoreBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpScoreBoard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpScoreBoard.Size = new System.Drawing.Size(190, 69);
+            this.tlpScoreBoard.TabIndex = 16;
+            // 
+            // lblGhoulHitPoints
+            // 
+            this.lblGhoulHitPoints.AutoSize = true;
+            this.lblGhoulHitPoints.Location = new System.Drawing.Point(79, 51);
+            this.lblGhoulHitPoints.Name = "lblGhoulHitPoints";
+            this.lblGhoulHitPoints.Size = new System.Drawing.Size(102, 17);
+            this.lblGhoulHitPoints.TabIndex = 7;
+            this.lblGhoulHitPoints.Text = "GhoulHitPoints";
+            // 
+            // lblGhostHitPoints
+            // 
+            this.lblGhostHitPoints.AutoSize = true;
+            this.lblGhostHitPoints.Location = new System.Drawing.Point(79, 34);
+            this.lblGhostHitPoints.Name = "lblGhostHitPoints";
+            this.lblGhostHitPoints.Size = new System.Drawing.Size(102, 17);
+            this.lblGhostHitPoints.TabIndex = 6;
+            this.lblGhostHitPoints.Text = "GhostHitPoints";
+            // 
+            // lblBatHitPoints
+            // 
+            this.lblBatHitPoints.AutoSize = true;
+            this.lblBatHitPoints.Location = new System.Drawing.Point(79, 17);
+            this.lblBatHitPoints.Name = "lblBatHitPoints";
+            this.lblBatHitPoints.Size = new System.Drawing.Size(85, 17);
+            this.lblBatHitPoints.TabIndex = 5;
+            this.lblBatHitPoints.Text = "BatHitPoints";
+            // 
+            // lblPlayerHitPoints
+            // 
+            this.lblPlayerHitPoints.AutoSize = true;
+            this.lblPlayerHitPoints.Location = new System.Drawing.Point(79, 0);
+            this.lblPlayerHitPoints.Name = "lblPlayerHitPoints";
+            this.lblPlayerHitPoints.Size = new System.Drawing.Size(104, 17);
+            this.lblPlayerHitPoints.TabIndex = 4;
+            this.lblPlayerHitPoints.Text = "PlayerHitPoints";
+            // 
+            // lblPlayer
+            // 
+            this.lblPlayer.AutoSize = true;
+            this.lblPlayer.Location = new System.Drawing.Point(3, 0);
+            this.lblPlayer.Name = "lblPlayer";
+            this.lblPlayer.Size = new System.Drawing.Size(48, 17);
+            this.lblPlayer.TabIndex = 0;
+            this.lblPlayer.Text = "Player";
+            // 
+            // lblBat
+            // 
+            this.lblBat.AutoSize = true;
+            this.lblBat.Location = new System.Drawing.Point(3, 17);
+            this.lblBat.Name = "lblBat";
+            this.lblBat.Size = new System.Drawing.Size(29, 17);
+            this.lblBat.TabIndex = 1;
+            this.lblBat.Text = "Bat";
+            // 
+            // lblGhost
+            // 
+            this.lblGhost.AutoSize = true;
+            this.lblGhost.Location = new System.Drawing.Point(3, 34);
+            this.lblGhost.Name = "lblGhost";
+            this.lblGhost.Size = new System.Drawing.Size(46, 17);
+            this.lblGhost.TabIndex = 2;
+            this.lblGhost.Text = "Ghost";
+            // 
+            // lblGhoul
+            // 
+            this.lblGhoul.AutoSize = true;
+            this.lblGhoul.Location = new System.Drawing.Point(3, 51);
+            this.lblGhoul.Name = "lblGhoul";
+            this.lblGhoul.Size = new System.Drawing.Size(46, 17);
+            this.lblGhoul.TabIndex = 3;
+            this.lblGhoul.Text = "Ghoul";
             // 
             // TheQuest
             // 
@@ -336,6 +451,8 @@ namespace DungeonProjectVersion2
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(887, 450);
+            this.Controls.Add(this.pbPlayer);
+            this.Controls.Add(this.tlpScoreBoard);
             this.Controls.Add(this.gbAttack);
             this.Controls.Add(this.gbMove);
             this.Controls.Add(this.pbRedPotionInv);
@@ -351,7 +468,6 @@ namespace DungeonProjectVersion2
             this.Controls.Add(this.pbGhoul);
             this.Controls.Add(this.pbGhost);
             this.Controls.Add(this.pbBat);
-            this.Controls.Add(this.pbPlayer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -374,6 +490,8 @@ namespace DungeonProjectVersion2
             ((System.ComponentModel.ISupportInitialize)(this.pbRedPotionInv)).EndInit();
             this.gbMove.ResumeLayout(false);
             this.gbAttack.ResumeLayout(false);
+            this.tlpScoreBoard.ResumeLayout(false);
+            this.tlpScoreBoard.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,6 +523,15 @@ namespace DungeonProjectVersion2
         private System.Windows.Forms.Button btnAtkDown;
         private System.Windows.Forms.Button btnAtkUp;
         private System.Windows.Forms.Button btnAtkRight;
+        private System.Windows.Forms.TableLayoutPanel tlpScoreBoard;
+        private System.Windows.Forms.Label lblPlayer;
+        private System.Windows.Forms.Label lblBat;
+        private System.Windows.Forms.Label lblGhost;
+        private System.Windows.Forms.Label lblGhoul;
+        private System.Windows.Forms.Label lblGhoulHitPoints;
+        private System.Windows.Forms.Label lblGhostHitPoints;
+        private System.Windows.Forms.Label lblBatHitPoints;
+        private System.Windows.Forms.Label lblPlayerHitPoints;
     }
 }
 
