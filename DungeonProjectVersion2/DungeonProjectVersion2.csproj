@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bat.cs" />
     <Compile Include="Direction.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Ghost.cs" />
+    <Compile Include="Ghoul.cs" />
     <Compile Include="Mover.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="TheQuest.cs">
