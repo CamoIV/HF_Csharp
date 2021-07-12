@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace DungeonProjectVersion2
 {
@@ -81,22 +83,5 @@ namespace DungeonProjectVersion2
                     break;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
