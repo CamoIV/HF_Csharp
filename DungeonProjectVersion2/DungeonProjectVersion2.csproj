@@ -49,6 +49,7 @@
     <Compile Include="Direction.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Mover.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="TheQuest.cs">
       <SubType>Form</SubType>
     </Compile>

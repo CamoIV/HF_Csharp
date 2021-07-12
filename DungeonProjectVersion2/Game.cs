@@ -28,6 +28,7 @@ namespace DungeonProjectVersion2
         public void Move(Direction direction, Random random)
         {
             player.Move(direction);
+
             foreach(Enemy enemy in Enemies)
             {
                 enemy.Move(random);
