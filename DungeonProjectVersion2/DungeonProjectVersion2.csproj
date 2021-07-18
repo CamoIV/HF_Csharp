@@ -47,13 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bat.cs" />
+    <Compile Include="Bow.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Ghost.cs" />
     <Compile Include="Ghoul.cs" />
+    <Compile Include="Ipotion.cs" />
+    <Compile Include="Mase.cs" />
     <Compile Include="Mover.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="RedPotion.cs" />
+    <Compile Include="Sword.cs" />
     <Compile Include="TheQuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weapon.cs" />
     <EmbeddedResource Include="TheQuest.resx">
       <DependentUpon>TheQuest.cs</DependentUpon>
     </EmbeddedResource>
