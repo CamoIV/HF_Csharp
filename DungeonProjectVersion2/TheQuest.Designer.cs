@@ -63,6 +63,7 @@ namespace DungeonProjectVersion2
             this.lblBat = new System.Windows.Forms.Label();
             this.lblGhost = new System.Windows.Forms.Label();
             this.lblGhoul = new System.Windows.Forms.Label();
+            this.btnDrink = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGhost)).BeginInit();
@@ -192,6 +193,7 @@ namespace DungeonProjectVersion2
             // pbSwordInv
             // 
             this.pbSwordInv.BackColor = System.Drawing.Color.Transparent;
+            this.pbSwordInv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbSwordInv.Image = ((System.Drawing.Image)(resources.GetObject("pbSwordInv.Image")));
             this.pbSwordInv.Location = new System.Drawing.Point(110, 350);
             this.pbSwordInv.Name = "pbSwordInv";
@@ -199,6 +201,7 @@ namespace DungeonProjectVersion2
             this.pbSwordInv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbSwordInv.TabIndex = 9;
             this.pbSwordInv.TabStop = false;
+            this.pbSwordInv.Click += new System.EventHandler(this.pbSwordInv_Click);
             // 
             // pbBowInv
             // 
@@ -210,6 +213,7 @@ namespace DungeonProjectVersion2
             this.pbBowInv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBowInv.TabIndex = 10;
             this.pbBowInv.TabStop = false;
+            this.pbBowInv.Click += new System.EventHandler(this.pbBowInv_Click);
             // 
             // pbMaceInv
             // 
@@ -221,6 +225,7 @@ namespace DungeonProjectVersion2
             this.pbMaceInv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMaceInv.TabIndex = 11;
             this.pbMaceInv.TabStop = false;
+            this.pbMaceInv.Click += new System.EventHandler(this.pbMaceInv_Click);
             // 
             // pbBluePotionInv
             // 
@@ -232,6 +237,7 @@ namespace DungeonProjectVersion2
             this.pbBluePotionInv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBluePotionInv.TabIndex = 12;
             this.pbBluePotionInv.TabStop = false;
+            this.pbBluePotionInv.Click += new System.EventHandler(this.pbBluePotionInv_Click);
             // 
             // pbRedPotionInv
             // 
@@ -243,6 +249,7 @@ namespace DungeonProjectVersion2
             this.pbRedPotionInv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRedPotionInv.TabIndex = 13;
             this.pbRedPotionInv.TabStop = false;
+            this.pbRedPotionInv.Click += new System.EventHandler(this.pbRedPotionInv_Click);
             // 
             // gbMove
             // 
@@ -266,6 +273,7 @@ namespace DungeonProjectVersion2
             this.btnMoveLeft.TabIndex = 19;
             this.btnMoveLeft.Text = "←";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
+            this.btnMoveLeft.Click += new System.EventHandler(this.btnMoveLeft_Click);
             // 
             // btnMoveDown
             // 
@@ -275,6 +283,7 @@ namespace DungeonProjectVersion2
             this.btnMoveDown.TabIndex = 18;
             this.btnMoveDown.Text = "↓";
             this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
             // btnMoveUp
             // 
@@ -284,6 +293,7 @@ namespace DungeonProjectVersion2
             this.btnMoveUp.TabIndex = 17;
             this.btnMoveUp.Text = "↑";
             this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
             // btnMoveRight
             // 
@@ -293,10 +303,12 @@ namespace DungeonProjectVersion2
             this.btnMoveRight.TabIndex = 16;
             this.btnMoveRight.Text = "→";
             this.btnMoveRight.UseVisualStyleBackColor = true;
+            this.btnMoveRight.Click += new System.EventHandler(this.btnMoveRight_Click);
             // 
             // gbAttack
             // 
             this.gbAttack.BackColor = System.Drawing.Color.Transparent;
+            this.gbAttack.Controls.Add(this.btnDrink);
             this.gbAttack.Controls.Add(this.btnAtkLeft);
             this.gbAttack.Controls.Add(this.btnAtkDown);
             this.gbAttack.Controls.Add(this.btnAtkUp);
@@ -316,6 +328,7 @@ namespace DungeonProjectVersion2
             this.btnAtkLeft.TabIndex = 23;
             this.btnAtkLeft.Text = "←";
             this.btnAtkLeft.UseVisualStyleBackColor = true;
+            this.btnAtkLeft.Click += new System.EventHandler(this.btnAtkLeft_Click);
             // 
             // btnAtkDown
             // 
@@ -326,6 +339,7 @@ namespace DungeonProjectVersion2
             this.btnAtkDown.Text = "↓";
             this.btnAtkDown.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnAtkDown.UseVisualStyleBackColor = true;
+            this.btnAtkDown.Click += new System.EventHandler(this.btnAtkDown_Click);
             // 
             // btnAtkUp
             // 
@@ -336,6 +350,7 @@ namespace DungeonProjectVersion2
             this.btnAtkUp.Text = "↑";
             this.btnAtkUp.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnAtkUp.UseVisualStyleBackColor = true;
+            this.btnAtkUp.Click += new System.EventHandler(this.btnAtkUp_Click);
             // 
             // btnAtkRight
             // 
@@ -346,6 +361,7 @@ namespace DungeonProjectVersion2
             this.btnAtkRight.Text = "→";
             this.btnAtkRight.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnAtkRight.UseVisualStyleBackColor = true;
+            this.btnAtkRight.Click += new System.EventHandler(this.btnAtkRight_Click);
             // 
             // tlpScoreBoard
             // 
@@ -443,6 +459,16 @@ namespace DungeonProjectVersion2
             this.lblGhoul.TabIndex = 3;
             this.lblGhoul.Text = "Ghoul";
             // 
+            // btnDrink
+            // 
+            this.btnDrink.Location = new System.Drawing.Point(47, 18);
+            this.btnDrink.Name = "btnDrink";
+            this.btnDrink.Size = new System.Drawing.Size(86, 25);
+            this.btnDrink.TabIndex = 24;
+            this.btnDrink.Text = "Drink";
+            this.btnDrink.UseVisualStyleBackColor = true;
+            this.btnDrink.Visible = false;
+            // 
             // TheQuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -474,6 +500,7 @@ namespace DungeonProjectVersion2
             this.Name = "TheQuest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.TheQuest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGhost)).EndInit();
@@ -532,6 +559,7 @@ namespace DungeonProjectVersion2
         private System.Windows.Forms.Label lblGhostHitPoints;
         private System.Windows.Forms.Label lblBatHitPoints;
         private System.Windows.Forms.Label lblPlayerHitPoints;
+        private System.Windows.Forms.Button btnDrink;
     }
 }
 
